@@ -13,7 +13,8 @@ lsp.on_attach(function(client, bufnr)
     end
 
     nmap("gD", vim.lsp.buf.declaration, 'Go to Declaration')
-    nmap("gd", "<cmd>Telescope lsp_definitions<cr>", 'Go to Definition')
+    nmap("gD", vim.lsp.buf.definition, 'Go to Declaration')
+    -- nmap("gd", "<cmd>Telescope lsp_definitions<cr>", 'Go to Definition')
     nmap("K", vim.lsp.buf.hover, 'Hover')
     nmap("gI", vim.lsp.buf.implementation, 'Go to Implementation')
     nmap("gr", "<cmd>Telescope lsp_references<cr>", 'Show references')
