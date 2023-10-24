@@ -1,6 +1,6 @@
 # Dotfiles
 
-Use GNU `stow` to
+Use GNU `stow` to create config's symlinks.
 
 1. Clone this repo to your home dir
 
