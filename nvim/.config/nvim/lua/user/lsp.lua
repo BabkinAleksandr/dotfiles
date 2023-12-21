@@ -40,5 +40,8 @@ lsp.set_sign_icons({
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 require('lspconfig').kotlin_language_server.setup {}
+require('lspconfig').clangd.setup {
+    indentWidth = 4
+}
 
 lsp.setup()
