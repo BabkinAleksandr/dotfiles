@@ -47,12 +47,12 @@ return packer.startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'windwp/nvim-autopairs'
     use 'numToStr/Comment.nvim'
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
-    }
+    -- use {
+    --     'nvim-tree/nvim-tree.lua',
+    --     requires = {
+    --         'nvim-tree/nvim-web-devicons', -- optional
+    --     },
+    -- }
     use { 'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons' }
     use 'moll/vim-bbye'
     use {
