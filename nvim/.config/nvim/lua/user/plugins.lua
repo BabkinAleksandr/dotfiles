@@ -41,8 +41,8 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim' -- Have packer manage itself
-    use 'nvim-lua/popup.nvim'  -- An implementation of the Popup API from vim in Neovim
-    use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
+    use 'nvim-lua/popup.nvim'    -- An implementation of the Popup API from vim in Neovim
+    use 'nvim-lua/plenary.nvim'  -- Useful lua functions used by lots of plugins
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'windwp/nvim-autopairs'
@@ -66,10 +66,10 @@ return packer.startup(function(use)
     use {
         'NeogitOrg/neogit',
         requires = {
-            { 'nvim-lua/plenary.nvim' },   -- required
+            { 'nvim-lua/plenary.nvim' },         -- required
             { 'nvim-telescope/telescope.nvim' }, -- optional
-            { 'sindrets/diffview.nvim' },  -- optional
-            { 'ibhagwan/fzf-lua' },        -- optional
+            { 'sindrets/diffview.nvim' },        -- optional
+            { 'ibhagwan/fzf-lua' },              -- optional
         }
     }
     use 'lukas-reineke/indent-blankline.nvim' -- indentation symbols for lines
@@ -84,23 +84,23 @@ return packer.startup(function(use)
     -- Colorschemes
     use 'lunarvim/colorschemes'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
-    use 'gbprod/nord.nvim'
+    -- use 'gbprod/nord.nvim'
     use { 'catppuccin/nvim', as = 'catppuccin' }
-
+    use 'AlexvZyl/nordic.nvim'
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },       -- Required
-            { 'williamboman/mason.nvim' },     -- Optional
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
     use 'mfussenegger/nvim-dap'
@@ -109,6 +109,7 @@ return packer.startup(function(use)
     use { 'folke/which-key.nvim' }
 
     -- Telescope
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         -- or                            , branch = '0.1.x',
