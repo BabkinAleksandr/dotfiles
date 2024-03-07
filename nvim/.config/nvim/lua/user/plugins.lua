@@ -47,12 +47,12 @@ return packer.startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'windwp/nvim-autopairs'
     use 'numToStr/Comment.nvim'
-    -- use {
-    --     'nvim-tree/nvim-tree.lua',
-    --     requires = {
-    --         'nvim-tree/nvim-web-devicons', -- optional
-    --     },
-    -- }
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
     use { 'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons' }
     use 'moll/vim-bbye'
     use {
@@ -82,7 +82,7 @@ return packer.startup(function(use)
     })
 
     -- Colorschemes
-    use 'lunarvim/colorschemes'
+    -- use 'lunarvim/colorschemes'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     -- use 'gbprod/nord.nvim'
     use { 'catppuccin/nvim', as = 'catppuccin' }
