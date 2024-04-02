@@ -80,6 +80,7 @@ return packer.startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
     })
+    use 'petertriho/nvim-scrollbar'
 
     -- Colorschemes
     -- use 'lunarvim/colorschemes'
@@ -87,6 +88,7 @@ return packer.startup(function(use)
     -- use 'gbprod/nord.nvim'
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use 'AlexvZyl/nordic.nvim'
+
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
