@@ -2,17 +2,29 @@
 vim.g.loaded_netrw = 0
 vim.g.loaded_netrwPlugin = 0
 
-local nvim_tree = require("nvim-tree")
+local nvim_tree = require('nvim-tree')
 
 nvim_tree.setup({
-    sort_by = "case_sensitive",
+    sort_by = 'case_sensitive',
     view = {
-        width = 30
+        width = 35,
+        side = 'right'
     },
     renderer = {
+        indent_markers = {
+            enable = true
+        },
         group_empty = true,
+        icons = {
+            show = {
+                folder = false,
+            }
+        }
     },
     filters = {
-        dotfiles = true
+        dotfiles = false
     },
+    git = {
+        ignore = false
+    }
 })
