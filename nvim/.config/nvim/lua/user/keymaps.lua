@@ -14,6 +14,7 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>w", ":w<cr>", opts)
 keymap("n", "<leader>nn", ":noh<cr>", opts)
 -- Better window navigation
+-- This is taken over by Tmux navigation plugin
 -- keymap("n", "<C-h>", "<C-w>h", opts)
 -- keymap("n", "<C-j>", "<C-w>j", opts)
 -- keymap("n", "<C-k>", "<C-w>k", opts)
