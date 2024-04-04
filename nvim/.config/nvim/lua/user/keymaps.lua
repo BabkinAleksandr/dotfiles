@@ -1,60 +1,62 @@
-local opts = { noremap = true, silent = true }
-
--- local term_opts = { silent = true }
-
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+-- shorten func to be able to add description
+local remap = function(mode, before, after, desc)
+    desc = desc or ""
+    vim.api.nvim_set_keymap(mode, before, after, { noremap = true, silent = true, desc = desc })
+end
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+remap("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-keymap("n", "<leader>w", ":w<cr>", opts)
-keymap("n", "<leader>nn", ":noh<cr>", opts)
+remap("n", "<leader>w", ":w<cr>")
+remap("n", "<leader>nn", ":noh<cr>")
 -- Better window navigation
 -- This is taken over by Tmux navigation plugin
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
+-- remap("n", "<C-h>", "<C-w>h")
+-- remap("n", "<C-j>", "<C-w>j")
+-- remap("n", "<C-k>", "<C-w>k")
+-- remap("n", "<C-l>", "<C-w>l")
 
 -- Tmux
-keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts)
-keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", opts)
-keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts)
-keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
+remap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+remap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
+remap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+remap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+-- remap("n", "<C-j>", "<C-w>j")
+-- remap("n", "<C-k>", "<C-w>k")
+-- remap("n", "<C-l>", "<C-w>l")
 
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap = true, silent = true, desc = 'Toggle Tree view' })
--- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+remap("n", "<leader>ee", ":NvimTreeToggle<cr>", "Toggle Tree view")
+remap("n", "<leader>ef", ":NvimTreeFindFileToggle<cr>", "Find file in a tree")
+remap("n", "<leader>ec", ":NvimTreeFindFileToggle<cr>", "Collapse tree")
+remap("n", "<leader>er", ":NvimTreeFindFileToggle<cr>", "Refresh tree")
+-- remap("n", "<leader>e", ":Lex 30<cr>")
 
 -- Resize with arrows
-keymap("n", "<A-Up>", ":resize -2<CR>", opts)
-keymap("n", "<A-Down>", ":resize +2<CR>", opts)
-keymap("n", "<A-Left>", ":vertical resize +2<CR>", opts)
-keymap("n", "<A-Right>", ":vertical resize -2<CR>", opts)
+remap("n", "<A-Up>", ":resize -2<CR>")
+remap("n", "<A-Down>", ":resize +2<CR>")
+remap("n", "<A-Left>", ":vertical resize +2<CR>")
+remap("n", "<A-Right>", ":vertical resize -2<CR>")
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>q", ":Bdelete<CR>", opts) -- close buffer
+remap("n", "<S-l>", ":bnext<CR>")
+remap("n", "<S-h>", ":bprevious<CR>")
+remap("n", "<leader>q", ":Bdelete<CR>") -- close buffer
 
 -- Scrolling
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
+remap("n", "<C-d>", "<C-d>zz")
+remap("n", "<C-u>", "<C-u>zz")
 
 -- visual --
 -- stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+remap("v", "<", "<gv")
+remap("v", ">", ">gv")
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+remap("x", "J", ":move '>+1<CR>gv-gv")
+remap("x", "K", ":move '<-2<CR>gv-gv")
+remap("x", "<A-j>", ":move '>+1<CR>gv-gv")
+remap("x", "<A-k>", ":move '<-2<CR>gv-gv")
