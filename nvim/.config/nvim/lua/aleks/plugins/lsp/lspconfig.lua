@@ -10,62 +10,35 @@ return {
         local lspconfig = require("lspconfig")
         local mason_lspconfig = require("mason-lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
-        local keymap = vim.keymap -- for conciseness
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
             callback = function(ev)
-                -- Buffer local mappings.
-                -- See `:help vim.lsp.*` for documentation on any of the below functions
-                local opts = { buffer = ev.buf, silent = true }
+                local keymap = function(mode, l, r, desc)
+                    desc = "LSP: " .. (desc or "")
+                    vim.keymap.set(mode, l, r, { buffer = ev.buffer, silent = true, desc = desc })
+                end
 
                 -- set keybinds
-                opts.desc = "LSP: Show references"
-                keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
-
-                opts.desc = "LSP: Go to declaration"
-                keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
-
-                opts.desc = "LSP: Show definitions"
-                keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
-
-                opts.desc = "LSP: Show implementations"
-                keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
-
-                opts.desc = "LSP: Show type definitions"
-                keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
-
-                opts.desc = "LSP: See available code actions"
-                keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
-
-                opts.desc = "LSP: Rename symbol"
-                keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
-
-                opts.desc = "LSP: Show buffer diagnostics"
-                keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-
-                opts.desc = "LSP: Show line diagnostics"
-                keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-                opts.desc = "LSP: Go to previous diagnostic"
-                keymap.set("n", "<leader>lk", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-                opts.desc = "LSP: Go to next diagnostic"
-                keymap.set("n", "<leader>lj", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
-
-                opts.desc = "LSP: Hover"
-                keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
-                opts.desc = "LSP: Restart LSP"
-                keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+                keymap("n", "gR", "<cmd>Telescope lsp_references<CR>", "Show references")
+                keymap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+                keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show definitions")
+                keymap("n", "gi", "<cmd>Telescope lsp_implementations<CR>", "Show implementations")
+                keymap("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", "Show type definitions")
+                keymap({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, "See available code actions")
+                keymap("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
+                keymap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics")
+                keymap("n", "<leader>d", vim.diagnostic.open_float, "Show line diagnostics")
+                keymap("n", "<leader>lk", vim.diagnostic.goto_prev, "Go to previous diagnostic")
+                keymap("n", "<leader>lj", vim.diagnostic.goto_next, "Go to next diagnostic")
+                keymap("n", "K", vim.lsp.buf.hover, "Hover")
+                keymap("n", "<leader>rs", ":LspRestart<CR>", "Restart LSP")
             end,
         })
 
         -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- Change the Diagnostic symbols in the sign column (gutter)
-        -- (not in youtube nvim video)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
@@ -83,7 +56,7 @@ return {
                 -- configure svelte server
                 lspconfig["svelte"].setup({
                     capabilities = capabilities,
-                    on_attach = function(client, bufnr)
+                    on_attach = function(client)
                         vim.api.nvim_create_autocmd("BufWritePost", {
                             pattern = { "*.js", "*.ts" },
                             callback = function(ctx)

@@ -12,7 +12,6 @@ return {
             build = "make install_jsregexp",
         },
         "saadparwaiz1/cmp_luasnip", -- for autocompletion
-        "rafamadriz/friendly-snippets", -- useful snippets
     },
     config = function()
         local cmp = require("cmp")
@@ -33,6 +32,8 @@ return {
                     i = cmp.mapping.abort(),
                     c = cmp.mapping.close(),
                 }),
+                ["<C-d>"] = cmp.mapping.scroll_docs(4),
+                ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
             }),
             confirm_opts = {
