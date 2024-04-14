@@ -4,7 +4,8 @@ return {
     version = "*",
     opts = {
         options = {
-            mode = "tabs",
+            -- mode = "tabs",
+            move = "buffers",
             diagnostics = "nvim_lsp",
             diagnostics_indicator = function(count, level)
                 local icon = level:match("error") and " " or " "
