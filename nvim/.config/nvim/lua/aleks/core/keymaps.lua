@@ -26,6 +26,8 @@ remap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", "To right tmux pan")
 -- remap("n", "<C-j>", "<C-w>j")
 -- remap("n", "<C-k>", "<C-w>k")
 -- remap("n", "<C-l>", "<C-w>l")
+--
+remap("n", "<leader>ee", "<cmd>Oil<cr>", "Open current buffer dir")
 
 -- Show netrw on the left side with width of 30
 -- See nvim-tree.lua file for more
