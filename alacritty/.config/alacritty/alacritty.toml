@@ -2,16 +2,29 @@
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 18.0
+size = 17.0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
 
 [env]
 TERM = "xterm-256color"
 
 [window]
-decorations = "None"
+decorations = "Transparent"
 opacity = 0.9
 padding = { x = 12, y = 10 }
 dynamic_padding = true
