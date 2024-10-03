@@ -1,24 +1,43 @@
 return {
+    {
+        "tjdevries/colorbuddy.nvim",
+        priority = 1000,
+        lazy = false,
+        config = function()
+            vim.cmd("colorscheme gruvbox-minor")
+        end,
+    },
     "cocopon/iceberg.vim",
-    priority = 1000,
-    config = function()
-        vim.cmd("colorscheme iceberg")
-    end,
+    {
+        "AlexvZyl/nordic.nvim",
+        priority = 1000,
+        config = function()
+            local nordic = require("nordic")
+            local black = "#171717"
+
+            nordic.setup({
+                on_palette = function(palette)
+                    palette.black0 = black
+                    return palette
+                end,
+            })
+
+            -- nordic.load()
+        end,
+    },
+    -- "rktjmp/lush.nvim",
+    { "rose-pine/neovim", name = "rose-pine" },
+    "jesseleite/nvim-noirbuddy",
+    "rebelot/kanagawa.nvim",
+    "gremble0/yellowbeans.nvim",
+    "Shatur/neovim-ayu",
+    -- "RRethy/base16-nvim",
+    "ntk148v/komau.vim",
+    { "catppuccin/nvim", name = "catppuccin" },
+    "LuRsT/austere.vim",
+    "ricardoraposo/gruvbox-minor.nvim",
 }
--- return {
---     "AlexvZyl/nordic.nvim",
---     priority = 1000,
---     config = function()
---         local nordic = require("nordic")
---         -- local black = "#171717"
---
---         -- nordic.setup({
---         -- 	on_palette = function(palette)
---         -- 		palette.black0 = black
---         -- 		return palette
---         -- 	end,
---         -- })
---
---         nordic.load()
---     end,
--- }
+
+-- ayu-mirage
+-- base16-ashes
+-- base16-atelier-plateau
