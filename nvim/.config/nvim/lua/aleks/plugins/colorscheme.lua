@@ -29,7 +29,6 @@ return {
     { "rose-pine/neovim", name = "rose-pine" },
     "jesseleite/nvim-noirbuddy",
     "rebelot/kanagawa.nvim",
-    "gremble0/yellowbeans.nvim",
     "Shatur/neovim-ayu",
     -- "RRethy/base16-nvim",
     "ntk148v/komau.vim",
@@ -37,7 +36,3 @@ return {
     "LuRsT/austere.vim",
     "ricardoraposo/gruvbox-minor.nvim",
 }
-
--- ayu-mirage
--- base16-ashes
--- base16-atelier-plateau
