@@ -4,7 +4,7 @@ return {
     main = "ibl",
     config = function()
         vim.opt.list = true
-        vim.opt.listchars:append("space:⋅")
+        vim.opt.listchars:append("space:·")
 
         local ibl = require("ibl")
         ibl.setup({
