@@ -4,7 +4,7 @@ return {
         priority = 1000,
         lazy = false,
         config = function()
-            vim.cmd("colorscheme gruvbox-minor")
+            -- vim.cmd("colorscheme gruvbox-minor")
         end,
     },
     "cocopon/iceberg.vim",
@@ -35,4 +35,12 @@ return {
     { "catppuccin/nvim", name = "catppuccin" },
     "LuRsT/austere.vim",
     "ricardoraposo/gruvbox-minor.nvim",
+    {
+        "vague2k/vague.nvim",
+        config = function()
+            require("vague").setup({
+                vim.cmd("colorscheme vague"),
+            })
+        end,
+    },
 }
