@@ -7,6 +7,7 @@ return {
             "nvim-neotest/nvim-nio",
             "williamboman/mason.nvim",
         },
+        enabled = false,
         config = function()
             local dap = require("dap")
             local ui = require("dapui")

@@ -17,10 +17,7 @@ return {
                 yaml = { "prettier" },
                 markdown = { "prettier" },
                 graphql = { "prettier" },
-                liquid = { "prettier" },
                 lua = { "stylua" },
-                python = { "isort", "black" },
-                kotlin = { "ktlint" },
                 c = { "clang-format" },
             },
             format_on_save = {

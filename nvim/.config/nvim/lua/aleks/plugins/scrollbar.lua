@@ -1,6 +1,7 @@
 return {
     "petertriho/nvim-scrollbar",
     event = { "BufEnter" },
+    enabled = false,
     config = function()
         local scrollbar = require("scrollbar")
 

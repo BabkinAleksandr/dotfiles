@@ -1,5 +1,6 @@
 return {
     "echasnovski/mini.starter",
+    enabled = false,
     version = "*",
     config = function()
         local ministarter = require("mini.starter")
