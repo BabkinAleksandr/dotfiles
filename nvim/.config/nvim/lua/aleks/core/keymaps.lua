@@ -42,7 +42,7 @@ remap("n", "<A-Right>", ":vertical resize -2<CR>", "Resize current window vertic
 -- Navigate buffers
 remap("n", "<S-l>", ":bnext<CR>", "To next buffer")
 remap("n", "<S-h>", ":bprevious<CR>", "To previous buffer")
-remap("n", "<leader>q", ":Bdelete<CR>", "Close buffer")
+remap("n", "<leader>q", ":bd<CR>", "Close buffer")
 -- Navigate tabs
 remap("n", "<leader>to", "<cmd>tabnew<CR>", "Open new tab") -- open new tab
 remap("n", "<leader>tx", "<cmd>tabclose<CR>", "Close current tab") -- close current tab
