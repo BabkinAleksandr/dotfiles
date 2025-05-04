@@ -1,0 +1,35 @@
+font-size = 17
+window-padding-x = 10
+window-padding-y = 10
+# theme = rose-pine
+theme = iceberg-dark
+font-family = Iosevka Nerd Font
+font-thicken = false
+font-thicken-strength = 100
+
+gtk-tabs-location = bottom
+gtk-wide-tabs = false
+
+### tmux-like controls with <leader> sequence
+
+# tabs
+keybind = ctrl+c>c=new_tab
+keybind = ctrl+c>x=close_tab
+keybind = ctrl+c>n=next_tab
+keybind = ctrl+c>p=previous_tab
+keybind = ctrl+c>1=goto_tab:1
+keybind = ctrl+c>2=goto_tab:2
+keybind = ctrl+c>3=goto_tab:3
+keybind = ctrl+c>4=goto_tab:4
+keybind = ctrl+c>5=goto_tab:5
+
+# splits
+keybind = ctrl+c>]=new_split:right
+keybind = ctrl+c>[=new_split:left
+keybind = ctrl+c>shift+-=new_split:down
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+c>z=toggle_split_zoom
+
