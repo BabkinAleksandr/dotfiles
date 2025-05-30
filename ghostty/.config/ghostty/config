@@ -27,9 +27,9 @@ keybind = ctrl+c>5=goto_tab:5
 keybind = ctrl+c>]=new_split:right
 keybind = ctrl+c>[=new_split:left
 keybind = ctrl+c>shift+-=new_split:down
-keybind = ctrl+l=goto_split:right
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+j=goto_split:down
+keybind = ctrl+c>l=goto_split:right
+keybind = ctrl+c>h=goto_split:left
+keybind = ctrl+c>k=goto_split:up
+keybind = ctrl+c>j=goto_split:down
 keybind = ctrl+c>z=toggle_split_zoom
 
