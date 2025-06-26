@@ -65,3 +65,9 @@ remap("x", "J", ":move '>+1<CR>gv-gv", "Move selection down")
 remap("x", "K", ":move '<-2<CR>gv-gv", "Move selection up")
 remap("x", "<A-j>", ":move '>+1<CR>gv-gv", "Move selection right")
 remap("x", "<A-k>", ":move '<-2<CR>gv-gv", "Move selection left")
+
+-- Quickfix list
+remap("n", "<leader>co", "<cmd>copen<CR>", "Open quickfix list")
+remap("n", "<leader>cn", "<cmd>cnext<CR>", "Next quickfix list item")
+remap("n", "<leader>cp", "<cmd>cprev<CR>", "Previous quickfix list item")
+remap("n", "<leader>cc", "<cmd>cclose<CR>", "Close quickfix list")
