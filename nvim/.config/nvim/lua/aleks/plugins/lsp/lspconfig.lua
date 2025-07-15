@@ -3,6 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
+        "mason-org/mason-lspconfig.nvim",
         { "antosha417/nvim-lsp-file-operations", config = true },
         { "folke/neodev.nvim", opts = {} },
     },
@@ -52,6 +53,15 @@ return {
                     capabilities = capabilities,
                 })
             end,
+            -- list of servers for mason to install
+            ensure_installed = {
+                -- "html",
+                -- "cssls",
+                -- "tailwindcss",
+                "lua_ls",
+                -- "graphql",
+                -- "emmet_ls",
+            },
             ["graphql"] = function()
                 -- configure graphql language server
                 lspconfig["graphql"].setup({
@@ -95,9 +105,7 @@ return {
             ["kotlin_lsp"] = function()
                 lspconfig["kotlin_lsp"].setup({
                     capabilities = capabilities,
-                    filetypes = {
-                        "kotlin",
-                    },
+                    filetypes = { "kotlin", "kt", "kts" },
                 })
             end,
         })
