@@ -4,7 +4,7 @@ return {
         priority = 1000,
         lazy = false,
         config = function()
-            -- vim.cmd("colorscheme gruvbox-minor")
+            vim.cmd("colorscheme gruvbox-minor")
         end,
     },
     "cocopon/iceberg.vim",
@@ -38,8 +38,9 @@ return {
     {
         "vague2k/vague.nvim",
         config = function()
-            require("vague").setup({})
-            vim.cmd("colorscheme vague")
+            -- require("vague").setup({})
+            -- vim.cmd("colorscheme vague")
+            -- vim.cmd("hi statusline guibg=NONE")
         end,
     },
 }
