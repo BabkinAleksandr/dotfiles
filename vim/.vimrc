@@ -38,8 +38,8 @@ endif
 call plug#begin()
 
 " Git related plugins
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-rhubarb'
 
 " Detect tabstop and shiftwidth automatically
 Plug 'tpope/vim-sleuth'
@@ -48,12 +48,12 @@ Plug 'tpope/vim-sleuth'
 "  The configuration is done below. Search for lsp to find it below.
 
 " Enable LSP
-Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/vim-lsp'
 " Install language servers and configure them for vim-lsp
-Plug 'mattn/vim-lsp-settings'
+" Plug 'mattn/vim-lsp-settings'
 
 " Use <Tab> to auto complete
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 
 " Useful plugin to show you pending keybinds.
 Plug 'liuchengxu/vim-which-key'
@@ -62,13 +62,13 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'airblade/vim-gitgutter'
 
 " Theme inspired by Atom
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
 
 " Set airline as statusline
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 
 " Add indentation guides even on blank lines
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 " "gc" to comment visual regions/lines
 Plug 'tpope/vim-commentary'
@@ -198,7 +198,7 @@ nnoremap <expr> <silent> j v:count == 0 ? 'gj' : 'j'
 
 " [[ Configure plugins ]]
 " Set colorscheme
-colorscheme onedark
+colorscheme retrobox
 " Characters to render for indentation guide
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
