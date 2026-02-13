@@ -16,12 +16,12 @@ return {
                 json = { "prettier" },
                 yaml = { "prettier" },
                 markdown = { "prettier" },
-                graphql = { "prettier" },
+                -- graphql = { "prettier" },
                 lua = { "stylua" },
                 c = { "clang-format" },
             },
             format_on_save = {
-                lsp_fallback = true,
+                lsp_fallback = false,
                 async = false,
                 timeout_ms = 1000,
             },
@@ -29,7 +29,7 @@ return {
 
         vim.keymap.set({ "n", "v" }, "<leader>lf", function()
             conform.format({
-                lsp_fallback = true,
+                lsp_fallback = false,
                 async = false,
                 timeout_ms = 1000,
             })
