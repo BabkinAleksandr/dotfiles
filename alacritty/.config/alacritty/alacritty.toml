@@ -2,16 +2,24 @@
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 18.0
+size = 24.0
+
+# [font.bold]
+# family = "BlexMono Nerd Font Mono"
+# style = "Regular"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+# family = "JetBrainsMono Nerd Font"
 # family = "Iosevka Nerd Font"
+# family = "BlexMono Nerd Font Mono"
+family = "FantasqueSansM Nerd Font Mono"
 
 [env]
 TERM = "xterm-256color"
 
 [window]
-padding = { x = 4, y = 2 }
+opacity = 0.9
+decorations = "Transparent"
+padding = { x = 8, y = 10 }
 dynamic_padding = true
 option_as_alt = "OnlyLeft"
