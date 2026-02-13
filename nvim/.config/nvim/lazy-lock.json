@@ -9,6 +9,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "colorbuddy.nvim": { "branch": "master", "commit": "8b968581e5c19d22a861d5f3fe5dbd83394fa681" },
   "conform.nvim": { "branch": "master", "commit": "8132ec733eed3bf415b97b76797ca41b59f51d7d" },
+  "fidget.nvim": { "branch": "main", "commit": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970" },
   "gitsigns.nvim": { "branch": "main", "commit": "1b0350ab707713b2bc6c236151f1a324175347b1" },
   "gruvbox-minor.nvim": { "branch": "main", "commit": "e3616ad7f2982211f0d9fa9e900ca6ba53ee6b12" },
   "harpoon": { "branch": "harpoon2", "commit": "ed1f853847ffd04b2b61c314865665e1dadf22c7" },
@@ -39,6 +40,5 @@
   "vague.nvim": { "branch": "main", "commit": "41b6b9a985c9091d0ec8571191e89d6950968cec" },
   "vim-test": { "branch": "master", "commit": "f881edb21e7a092f5793687d058c257dddb961d3" },
   "vim-tmux-navigator": { "branch": "master", "commit": "412c474e97468e7934b9c217064025ea7a69e05e" },
-  "vimux": { "branch": "master", "commit": "614f0bb1fb598f97accdcea71d5f7b18d7d62436" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }

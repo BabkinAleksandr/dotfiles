@@ -15,6 +15,17 @@ return {
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
             callback = function(ev)
+                -- Notify when LSP attaches (via fidget)
+                local client = vim.lsp.get_client_by_id(ev.data.client_id)
+                if client then
+                    local ok, fidget = pcall(require, "fidget")
+                    if ok then
+                        fidget.notify(client.name .. " attached", vim.log.levels.INFO)
+                    else
+                        vim.notify(client.name .. " attached", vim.log.levels.INFO)
+                    end
+                end
+
                 local keymap = function(mode, l, r, desc)
                     desc = "LSP: " .. (desc or "")
                     vim.keymap.set(mode, l, r, { buffer = ev.buffer, silent = true, desc = desc })
