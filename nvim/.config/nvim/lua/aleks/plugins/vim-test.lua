@@ -140,7 +140,8 @@ local function run_kotlin_test_nearest()
     vim.cmd("normal! G")
 end
 
-local function run_kotlin_test_file()
+local function run_kotlin_test_file(task)
+    task = task or "test"
     local class_name, _ = find_kotlin_test()
     local gradle_project = find_gradle_project()
     local root_project = find_root_project()
@@ -166,11 +167,13 @@ local function run_kotlin_test_file()
             .. root_project
             .. " && ./gradlew :"
             .. relative_path:gsub("/", ":")
-            .. ':test --tests "'
+            .. ":"
+            .. task
+            .. ' --tests "'
             .. escaped_class
-            .. '"'
+            .. '" --info'
     else
-        cmd = "cd " .. root_project .. ' && ./gradlew test --tests "' .. escaped_class .. '"'
+        cmd = "cd " .. root_project .. " && ./gradlew " .. task .. ' --tests "' .. escaped_class .. '" --info'
     end
 
     vim.cmd("vert rightbelow split | terminal " .. cmd)
@@ -180,7 +183,8 @@ end
 -- Store last test command for re-running
 local last_test_cmd = nil
 
-local function run_kotlin_test_nearest_with_save()
+local function run_kotlin_test_nearest_with_save(task)
+    task = task or "test"
     local class_name, method_name = find_kotlin_test()
     local gradle_project = find_gradle_project()
     local root_project = find_root_project()
@@ -212,11 +216,13 @@ local function run_kotlin_test_nearest_with_save()
             .. root_project
             .. " && ./gradlew :"
             .. relative_path:gsub("/", ":")
-            .. ':test --tests "'
+            .. ":"
+            .. task
+            .. ' --tests "'
             .. escaped_filter
-            .. '"'
+            .. '" --info'
     else
-        cmd = "cd " .. root_project .. ' && ./gradlew test --tests "' .. escaped_filter .. '"'
+        cmd = "cd " .. root_project .. " && ./gradlew " .. task .. ' --tests "' .. escaped_filter .. '" --info'
     end
 
     last_test_cmd = cmd
@@ -236,8 +242,34 @@ end
 return {
     "vim-test/vim-test", -- Keep as dependency for other languages
     keys = {
-        { "<leader>tr", run_kotlin_test_nearest_with_save, desc = "Run nearest test" },
-        { "<leader>tf", run_kotlin_test_file, desc = "Run current file tests" },
+        {
+            "<leader>tr",
+            function()
+                run_kotlin_test_nearest_with_save("test")
+            end,
+            desc = "Run nearest test",
+        },
+        {
+            "<leader>tir",
+            function()
+                run_kotlin_test_nearest_with_save("iTest")
+            end,
+            desc = "Run nearest iTest",
+        },
+        {
+            "<leader>tf",
+            function()
+                run_kotlin_test_file("test")
+            end,
+            desc = "Run current file tests",
+        },
+        {
+            "<leader>tif",
+            function()
+                run_kotlin_test_file("iTest")
+            end,
+            desc = "Run current file iTests",
+        },
         { "<leader>tl", run_last_test, desc = "Run last test" },
         {
             "<leader>td",

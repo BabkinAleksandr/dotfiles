@@ -113,12 +113,12 @@ return {
                     },
                 })
             end,
-            -- ["kotlin_lsp"] = function()
-            --     lspconfig["kotlin_lsp"].setup({
-            --         capabilities = capabilities,
-            --         filetypes = { "kotlin", "kt", "kts" },
-            --     })
-            -- end,
+            ["kotlin_lsp"] = function()
+                lspconfig["kotlin_lsp"].setup({
+                    capabilities = capabilities,
+                    filetypes = { "kotlin", "kt", "kts" },
+                })
+            end,
         })
     end,
 }
