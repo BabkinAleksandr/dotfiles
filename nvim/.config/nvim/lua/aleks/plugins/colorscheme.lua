@@ -26,7 +26,13 @@ return {
         end,
     },
     -- "rktjmp/lush.nvim",
-    { "rose-pine/neovim", name = "rose-pine" },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function()
+            vim.cmd("colorscheme rose-pine")
+        end,
+    },
     "jesseleite/nvim-noirbuddy",
     "rebelot/kanagawa.nvim",
     "Shatur/neovim-ayu",
@@ -40,7 +46,12 @@ return {
         config = function()
             -- require("vague").setup({})
             -- vim.cmd("colorscheme vague")
-            -- vim.cmd("hi statusline guibg=NONE")
+        end,
+    },
+    {
+        "omacom-io/lumon.nvim",
+        config = function()
+            vim.cmd("colorscheme lumon")
         end,
     },
 }
